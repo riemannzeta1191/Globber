@@ -22,7 +22,7 @@ class Category(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
+        self.slug = slugify(self.name)
         super(Category, self).save(*args, **kwargs)
 
     @staticmethod
